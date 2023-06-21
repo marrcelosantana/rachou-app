@@ -13,9 +13,11 @@
     "expo": "~48.0.18",
     "expo-font": "~11.1.1",
     "expo-status-bar": "~1.4.4",
+    "native-base": "^3.4.28",
     "react": "18.2.0",
     "react-native": "0.71.8",
     "react-native-responsive-fontsize": "^0.5.1",
+    "react-native-svg-transformer": "^1.0.0",
     "styled-components": "^5.3.9",
     "styled-components-react-native": "^1.0.0"
   },
