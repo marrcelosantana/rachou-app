@@ -7,7 +7,7 @@ export function Loading() {
 
   return (
     <Container>
-      <Spinner size="lg" color={COLORS.BLUE} />
+      <Spinner size="lg" color={COLORS.PURPLE} />
     </Container>
   );
 }
