@@ -1,16 +1,19 @@
 import { useNavigation } from "@react-navigation/native";
 import { AppNavigatorRoutesProps } from "@routes/app.routes";
-
 import { Button, Container, Subtitle, Title } from "./styles";
 
-export function Home() {
+export function Login() {
   const navigator = useNavigation<AppNavigatorRoutesProps>();
 
   return (
     <Container>
-      <Title>Home</Title>
-      <Button onPress={() => navigator.goBack()}>
-        <Subtitle>Go Back</Subtitle>
+      <Title>Login</Title>
+      <Button
+        onPress={() => {
+          navigator.navigate("home");
+        }}
+      >
+        <Subtitle>Go to Home</Subtitle>
       </Button>
     </Container>
   );
