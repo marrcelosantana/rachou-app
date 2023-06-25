@@ -8,7 +8,7 @@ export function Home() {
 
   return (
     <Container>
-      <Title>Home</Title>
+      <Title>Home Page</Title>
       <Button onPress={() => navigator.goBack()}>
         <Subtitle>Go Back</Subtitle>
       </Button>
