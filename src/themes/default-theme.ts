@@ -52,6 +52,7 @@ export const defaultTheme = {
   FONT_FAMILY: {
     REGULAR: "Inter_400Regular",
     MEDIUM: "Inter_500Medium",
+    SEMIBOLD: "Inter_600SemiBold",
     BOLD: "Inter_700Bold",
   },
 };

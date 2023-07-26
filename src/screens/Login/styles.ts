@@ -10,7 +10,7 @@ export const Container = styled.ImageBackground`
 
 export const FormContainer = styled.View`
   width: 100%;
-  height: ${RFValue(376)}px;
+  height: ${RFValue(396)}px;
   border-radius: 15px 15px 0px 0px;
   background-color: ${({ theme }) => theme.COLORS.GRAY_2};
   backdrop-filter: blur(8px);
@@ -23,7 +23,7 @@ export const Form = styled.View`
 
 export const Title = styled.Text`
   font-size: 20px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+  font-family: ${({ theme }) => theme.FONT_FAMILY.SEMIBOLD};
   color: ${({ theme }) => theme.COLORS.WHITE};
   margin-bottom: 16px;
 `;
@@ -49,4 +49,52 @@ export const ButtonText = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
   color: ${({ theme }) => theme.COLORS.WHITE};
   font-size: 16px;
+`;
+
+export const Divider = styled.View`
+  width: 100%;
+  margin: 16px 0 16px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const Word = styled.Text`
+  font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+  color: ${({ theme }) => theme.COLORS.GRAY_1};
+  font-size: 10px;
+`;
+
+export const Line = styled.View`
+  width: 45%;
+  height: 1px;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_1};
+`;
+
+export const Social = styled.View`
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+`;
+
+export const Footer = styled.View`
+  width: 100%;
+  flex-direction: row;
+  margin-top: 24px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const FooterText = styled.Text`
+  font-family: ${({ theme }) => theme.FONT_FAMILY.SEMIBOLD};
+  color: ${({ theme }) => theme.COLORS.WHITE};
+  font-size: 12px;
+  margin-right: 6px;
+`;
+
+export const Link = styled.Text`
+  font-family: ${({ theme }) => theme.FONT_FAMILY.SEMIBOLD};
+  color: ${({ theme }) => theme.COLORS.LIGHT_TEAL};
+  font-size: 12px;
 `;
