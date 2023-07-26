@@ -1,10 +1,19 @@
 import styled from "styled-components/native";
 
-export const Container = styled.View`
+import { RFValue } from "react-native-responsive-fontsize";
+
+export const Container = styled.ImageBackground`
   flex: 1;
   align-items: center;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
+  justify-content: space-between;
+`;
+
+export const Form = styled.View`
+  width: 100%;
+  height: ${RFValue(396)}px;
+  border-radius: 15px 15px 0px 0px;
+  backdrop-filter: blur(6.5px);
+  background-color: ${({ theme }) => theme.COLORS.GRAY_1};
 `;
 
 export const Title = styled.Text`

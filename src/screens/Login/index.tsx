@@ -1,20 +1,17 @@
 import { useNavigation } from "@react-navigation/native";
 import { AppNavigatorRoutesProps } from "@routes/app.routes";
-import { Button, Container, Subtitle, Title } from "./styles";
+
+import Logo from "@assets/blue-logo.svg";
+
+import { Container, Form } from "./styles";
 
 export function Login() {
   const navigator = useNavigation<AppNavigatorRoutesProps>();
 
   return (
-    <Container>
-      <Title>Login</Title>
-      <Button
-        onPress={() => {
-          navigator.navigate("home");
-        }}
-      >
-        <Subtitle>Go to Home</Subtitle>
-      </Button>
+    <Container source={require("../../assets/image-bg.png")} resizeMode="cover">
+      <Logo />
+      <Form></Form>
     </Container>
   );
 }
