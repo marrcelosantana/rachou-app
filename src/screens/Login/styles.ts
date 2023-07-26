@@ -6,14 +6,13 @@ export const Container = styled.ImageBackground`
   flex: 1;
   align-items: center;
   justify-content: space-between;
-  padding-top: ${RFValue(120)}px;
+  padding-top: ${RFValue(140)}px;
 `;
 
 export const FormContainer = styled(BlurView)`
   width: 100%;
   height: ${RFValue(396)}px;
   border-radius: 15px 15px 0px 0px;
-  backdrop-filter: blur(8px);
   padding: 40px 40px 0 40px;
 `;
 
