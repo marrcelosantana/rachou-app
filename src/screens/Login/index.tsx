@@ -35,7 +35,7 @@ export function Login() {
   return (
     <Container source={require("../../assets/image-bg.png")} resizeMode="cover">
       <Logo />
-      <FormContainer>
+      <FormContainer intensity={45}>
         <Title>Seja bem vindo!</Title>
 
         <Form>

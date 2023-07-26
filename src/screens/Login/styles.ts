@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
+import { BlurView } from "expo-blur";
 
 export const Container = styled.ImageBackground`
   flex: 1;
@@ -8,11 +9,10 @@ export const Container = styled.ImageBackground`
   padding-top: ${RFValue(120)}px;
 `;
 
-export const FormContainer = styled.View`
+export const FormContainer = styled(BlurView)`
   width: 100%;
   height: ${RFValue(396)}px;
   border-radius: 15px 15px 0px 0px;
-  background-color: ${({ theme }) => theme.COLORS.GRAY_2};
   backdrop-filter: blur(8px);
   padding: 40px 40px 0 40px;
 `;

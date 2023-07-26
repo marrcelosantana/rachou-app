@@ -22,7 +22,8 @@
     "react-native-responsive-fontsize": "^0.5.1",
     "react-native-svg-transformer": "^1.0.0",
     "styled-components": "^5.3.9",
-    "styled-components-react-native": "^1.0.0"
+    "styled-components-react-native": "^1.0.0",
+    "expo-blur": "~12.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
