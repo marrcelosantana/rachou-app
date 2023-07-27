@@ -44,6 +44,8 @@ export function Login() {
         <Form>
           <Input
             placeholder="Email"
+            keyboardType="email-address"
+            autoCorrect={false}
             rightElement={
               <EnvelopeSimple
                 size={24}
@@ -51,17 +53,15 @@ export function Login() {
                 style={{ marginRight: 16 }}
               />
             }
-            keyboardType="email-address"
-            autoCorrect={false}
           />
           <Input
             placeholder="Senha"
+            secureTextEntry={passwordVisible}
             rightElement={
               <Pressable onPress={() => setPasswordVisible(!passwordVisible)}>
                 <Eye size={24} color="#8e8e93" style={{ marginRight: 16 }} />
               </Pressable>
             }
-            secureTextEntry={passwordVisible}
           />
           <Subtitle>Esqueceu a senha?</Subtitle>
           <Button>

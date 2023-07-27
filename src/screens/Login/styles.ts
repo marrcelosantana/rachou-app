@@ -60,7 +60,7 @@ export const Divider = styled.View`
 
 export const Word = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
-  color: ${({ theme }) => theme.COLORS.GRAY_1};
+  color: ${({ theme }) => theme.COLORS.WHITE};
   font-size: 10px;
 `;
 
