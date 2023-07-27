@@ -22,7 +22,6 @@ export function Input({ errorMessage = null, isInvalid, ...rest }: Props) {
         borderRadius="5px"
         fontFamily={theme.FONT_FAMILY.REGULAR}
         fontSize={14}
-        color={theme.COLORS.GRAY_2}
         marginBottom="16px"
         _focus={{
           borderColor: theme.COLORS.BLUE,

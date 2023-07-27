@@ -1,4 +1,5 @@
-import { Platform } from "react-native";
+import { useState } from "react";
+import { Platform, Pressable } from "react-native";
 
 import Logo from "@assets/blue-logo.svg";
 import AppleSvg from "@assets/apple.svg";
@@ -30,6 +31,8 @@ import {
 } from "./styles";
 
 export function Login() {
+  const [passwordVisible, setPasswordVisible] = useState(true);
+
   const navigator = useNavigation<AppNavigatorRoutesProps>();
 
   return (
@@ -48,12 +51,17 @@ export function Login() {
                 style={{ marginRight: 16 }}
               />
             }
+            keyboardType="email-address"
+            autoCorrect={false}
           />
           <Input
             placeholder="Senha"
             rightElement={
-              <Eye size={24} color="#8e8e93" style={{ marginRight: 16 }} />
+              <Pressable onPress={() => setPasswordVisible(!passwordVisible)}>
+                <Eye size={24} color="#8e8e93" style={{ marginRight: 16 }} />
+              </Pressable>
             }
+            secureTextEntry={passwordVisible}
           />
           <Subtitle>Esqueceu a senha?</Subtitle>
           <Button>
