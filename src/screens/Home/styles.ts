@@ -1,5 +1,6 @@
-import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
+import { RFValue } from "react-native-responsive-fontsize";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const Container = styled.View`
   flex: 1;
@@ -22,12 +23,12 @@ export const UserImage = styled.Image`
   border-radius: 9999px;
 `;
 
-export const Highlight = styled.View`
+export const Highlight = styled(LinearGradient)`
+  max-width: 100%;
+  height: 190px;
   margin-top: 32px;
-  background-color: ${({ theme }) => theme.COLORS.BLUE};
   border-radius: 15px;
-  height: 171px;
-  padding: 0 16px;
+  padding: 0 20px;
   flex-direction: row;
   align-items: center;
 `;
@@ -37,29 +38,41 @@ export const HighlightText = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
   color: ${({ theme }) => theme.COLORS.WHITE};
   line-height: 24px;
-  max-width: 100%;
-  margin-top: 30px;
+  margin-top: ${RFValue(36)}px;
 `;
 
 export const HighlightImage = styled.Image`
-  width: ${RFValue(180)}px;
-  height: ${RFValue(170)}px;
+  width: ${RFValue(185)}px;
+  height: ${RFValue(175)}px;
   bottom: 0;
   right: 0;
   position: absolute;
 `;
 
-export const Title = styled.Text`
-  font-size: 32px;
-  color: ${({ theme }) => theme.COLORS.WHITE};
-  font-family: ${({ theme }) => theme.FONT_FAMILY.MEDIUM};
+export const Info = styled.View`
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  flex-direction: row;
 `;
 
-export const Button = styled.TouchableOpacity``;
-
-export const Subtitle = styled.Text`
-  margin-top: 12px;
+export const InfoText = styled.Text`
   font-size: 14px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
   color: ${({ theme }) => theme.COLORS.WHITE};
+`;
+
+export const Link = styled.View`
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+`;
+
+export const LinkText = styled.Text`
+  font-size: 10px;
+  font-family: ${({ theme }) => theme.FONT_FAMILY.MEDIUM};
+  color: ${({ theme }) => theme.COLORS.BLUE};
+  margin-right: 5px;
 `;
