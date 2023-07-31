@@ -1,3 +1,4 @@
+import { FlatList } from "react-native";
 import { ArrowUpRight } from "phosphor-react-native";
 
 import { useNavigation } from "@react-navigation/native";
@@ -5,6 +6,9 @@ import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
 import LogoImg from "@assets/white-logo.svg";
 import PlayerImg from "@assets/player.png";
+
+import { MatchCard } from "@components/MatchCard";
+import { matches } from "@utils/matches";
 
 import {
   Container,
@@ -45,6 +49,22 @@ export function Home() {
           <ArrowUpRight size={15} color="#0a84ff" weight="bold" />
         </Link>
       </Info>
+
+      <FlatList
+        data={matches}
+        keyExtractor={(item) => item.id}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ paddingRight: 24 }}
+        renderItem={({ item }) => (
+          <MatchCard
+            title={item.title}
+            date={item.date}
+            duration={item.duration}
+            image={item.image}
+          />
+        )}
+      />
     </Container>
   );
 }
