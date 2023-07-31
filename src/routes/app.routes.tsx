@@ -3,12 +3,14 @@ import {
   NativeStackNavigationProp,
 } from "@react-navigation/native-stack";
 
-import { Home } from "@screens/Home";
-import { Login } from "@screens/Login";
+import { TabRoutes } from "./tab.routes";
+import { Players } from "@screens/Players";
+import { Historic } from "@screens/Historic";
 
 type AppRoutes = {
-  login: undefined;
-  home: undefined;
+  tabs: undefined;
+  players: undefined;
+  historic: undefined;
 };
 
 export type AppNavigatorRoutesProps = NativeStackNavigationProp<AppRoutes>;
@@ -18,8 +20,9 @@ const { Navigator, Screen } = createNativeStackNavigator<AppRoutes>();
 export function AppRoutes() {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen name="home" component={Home} />
-      <Screen name="login" component={Login} />
+      <Screen name="tabs" component={TabRoutes} />
+      <Screen name="historic" component={Historic} />
+      <Screen name="players" component={Players} />
     </Navigator>
   );
 }

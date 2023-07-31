@@ -64,7 +64,7 @@ export const InfoText = styled.Text`
   color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
-export const Link = styled.View`
+export const Link = styled.Pressable`
   align-items: center;
   justify-content: center;
   flex-direction: row;

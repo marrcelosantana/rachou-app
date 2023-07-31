@@ -48,7 +48,7 @@ export function Home() {
 
       <Info>
         <InfoText>Meu histórico de partidas</InfoText>
-        <Link>
+        <Link onPress={() => navigator.navigate("historic")}>
           <LinkText>Mais Detalhes</LinkText>
           <ArrowUpRight size={15} color="#0a84ff" weight="bold" />
         </Link>
@@ -67,7 +67,7 @@ export function Home() {
 
       <Info>
         <InfoText>Jogadores cadastrados</InfoText>
-        <Link>
+        <Link onPress={() => navigator.navigate("players")}>
           <LinkText>Mais Detalhes</LinkText>
           <ArrowUpRight size={15} color="#0a84ff" weight="bold" />
         </Link>
