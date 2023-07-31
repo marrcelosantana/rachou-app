@@ -21,7 +21,7 @@ export const matches = [
     date: "23/09/2021",
     duration: "01:30h",
     image:
-      "https://www.natal.rn.gov.br/storage/app/media/noticias/37873_Original.jpeg",
+      "https://www.gremiofronteira.com.br/miniatura.php?src=uploads/estrutura_17/1626091324_whatsapp_image_2021-03-18_at_17.43.38__1_.jpeg",
   },
   {
     id: "4",

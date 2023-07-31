@@ -76,3 +76,5 @@ export const LinkText = styled.Text`
   color: ${({ theme }) => theme.COLORS.BLUE};
   margin-right: 5px;
 `;
+
+export const CardsContainer = styled.View``;

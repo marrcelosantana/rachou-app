@@ -11,6 +11,7 @@ import { MatchCard } from "@components/MatchCard";
 import { matches } from "@utils/matches";
 
 import {
+  CardsContainer,
   Container,
   Header,
   HiddenItem,
@@ -50,21 +51,31 @@ export function Home() {
         </Link>
       </Info>
 
-      <FlatList
-        data={matches}
-        keyExtractor={(item) => item.id}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ paddingRight: 24 }}
-        renderItem={({ item }) => (
-          <MatchCard
-            title={item.title}
-            date={item.date}
-            duration={item.duration}
-            image={item.image}
-          />
-        )}
-      />
+      <CardsContainer>
+        <FlatList
+          data={matches}
+          keyExtractor={(item) => item.id}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingRight: 24 }}
+          renderItem={({ item }) => (
+            <MatchCard
+              title={item.title}
+              date={item.date}
+              duration={item.duration}
+              image={item.image}
+            />
+          )}
+        />
+      </CardsContainer>
+
+      <Info>
+        <InfoText>Jogadores cadastrados</InfoText>
+        <Link>
+          <LinkText>Mais Detalhes</LinkText>
+          <ArrowUpRight size={15} color="#0a84ff" weight="bold" />
+        </Link>
+      </Info>
     </Container>
   );
 }
