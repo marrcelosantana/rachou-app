@@ -14,7 +14,7 @@ export function PlayerCard({ player }: Props) {
         resizeMode="cover"
       >
         <Filter colors={["transparent", "rgba(0,0,0,1)"]}>
-          <Title>{player.name}</Title>
+          <Title numberOfLines={1}>{player.name}</Title>
           <Text>{player.position}</Text>
         </Filter>
       </Background>

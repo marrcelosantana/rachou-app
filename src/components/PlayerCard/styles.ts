@@ -32,4 +32,5 @@ export const Text = styled.Text`
   font-size: 10px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.MEDIUM};
   color: ${({ theme }) => theme.COLORS.GRAY_1};
+  text-transform: capitalize;
 `;
