@@ -1,9 +1,23 @@
-import { Container, Title } from "./styles";
+import { PlayerDTO } from "@models/PlayerDTO";
+import { Background, Container, Filter, Text, Title } from "./styles";
 
-export function PlayerCard() {
+interface Props {
+  player: PlayerDTO;
+}
+
+export function PlayerCard({ player }: Props) {
   return (
     <Container>
-      <Title>Player Card</Title>
+      <Background
+        source={{ uri: player.image }}
+        imageStyle={{ borderRadius: 15 }}
+        resizeMode="cover"
+      >
+        <Filter colors={["transparent", "rgba(0,0,0,1)"]}>
+          <Title>{player.name}</Title>
+          <Text>{player.position}</Text>
+        </Filter>
+      </Background>
     </Container>
   );
 }

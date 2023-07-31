@@ -8,7 +8,10 @@ import LogoImg from "@assets/white-logo.svg";
 import PlayerImg from "@assets/player.png";
 
 import { MatchCard } from "@components/MatchCard";
+import { PlayerCard } from "@components/PlayerCard";
+
 import { matches } from "@utils/matches";
+import { players } from "@utils/players";
 
 import {
   CardsContainer,
@@ -58,14 +61,7 @@ export function Home() {
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{ paddingRight: 24 }}
-          renderItem={({ item }) => (
-            <MatchCard
-              title={item.title}
-              date={item.date}
-              duration={item.duration}
-              image={item.image}
-            />
-          )}
+          renderItem={({ item }) => <MatchCard match={item} />}
         />
       </CardsContainer>
 
@@ -76,6 +72,17 @@ export function Home() {
           <ArrowUpRight size={15} color="#0a84ff" weight="bold" />
         </Link>
       </Info>
+
+      <CardsContainer>
+        <FlatList
+          data={players}
+          keyExtractor={(item) => item.id}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingRight: 24 }}
+          renderItem={({ item }) => <PlayerCard player={item} />}
+        />
+      </CardsContainer>
     </Container>
   );
 }

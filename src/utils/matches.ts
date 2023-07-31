@@ -1,4 +1,6 @@
-export const matches = [
+import { MatchDTO } from "@models/MatchDTO";
+
+export const matches: MatchDTO[] = [
   {
     id: "1",
     title: "Racha de SI",

@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 export const Container = styled.View`
   width: 153px;
   height: 142px;
-  margin-right: 10px;
+  margin-right: 14px;
   border-radius: 15px;
 `;
 
