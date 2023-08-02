@@ -48,7 +48,7 @@ export function TabRoutes() {
           marginBottom: 30,
           marginLeft: 35,
           position: "absolute",
-          paddingTop: Platform.OS === "android" ? 2 : 30,
+          paddingTop: Platform.OS === "android" ? 2 : 28,
           borderTopWidth: 0,
           shadowColor: "#000",
           shadowOpacity: 0.1,
