@@ -17,12 +17,6 @@ export const Header = styled.View`
 
 export const HiddenItem = styled.View``;
 
-export const UserImage = styled.Image`
-  width: 32px;
-  height: 32px;
-  border-radius: 9999px;
-`;
-
 export const Highlight = styled(LinearGradient)`
   max-width: 100%;
   height: 190px;

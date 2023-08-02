@@ -9,6 +9,7 @@ import PlayerImg from "@assets/player.png";
 
 import { MatchCard } from "@components/MatchCard";
 import { PlayerCard } from "@components/PlayerCard";
+import { Avatar } from "@components/Avatar";
 
 import { matches } from "@utils/matches";
 import { players } from "@utils/players";
@@ -25,7 +26,6 @@ import {
   InfoText,
   Link,
   LinkText,
-  UserImage,
 } from "./styles";
 
 export function Home() {
@@ -36,7 +36,7 @@ export function Home() {
       <Header>
         <HiddenItem />
         <LogoImg />
-        <UserImage source={{ uri: "https://github.com/marrcelosantana.png" }} />
+        <Avatar />
       </Header>
 
       <Highlight colors={["#0a84ff", "#0ac4ff"]}>
