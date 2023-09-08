@@ -1,3 +1,4 @@
+import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
@@ -30,7 +31,6 @@ export const Divider = styled.View`
 
 export const Content = styled.View`
   flex: 1;
-  padding: 0 24px;
 `;
 
 export const Info = styled.View`
@@ -38,16 +38,22 @@ export const Info = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0 24px;
 `;
 
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
-  color: ${({ theme }) => theme.COLORS.WHITE};
-  font-size: 12px;
+  color: ${({ theme }) => theme.COLORS.GRAY_1};
+  font-size: ${RFValue(12)}px;
 `;
 
 export const Subtitle = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
   color: ${({ theme }) => theme.COLORS.GRAY_1};
-  font-size: 12px;
+  font-size: ${RFValue(12)}px;
+`;
+
+export const PlayersContainer = styled.View`
+  flex: 1;
+  margin-top: 32px;
 `;

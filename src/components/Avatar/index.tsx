@@ -1,7 +1,9 @@
 import { Container } from "./styles";
 
-export function Avatar() {
-  return (
-    <Container source={{ uri: "https://github.com/marrcelosantana.png" }} />
-  );
+interface AvatarProps {
+  uri: string;
+}
+
+export function Avatar({ uri }: AvatarProps) {
+  return <Container source={{ uri: uri }} />;
 }

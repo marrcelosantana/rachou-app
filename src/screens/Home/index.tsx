@@ -36,7 +36,7 @@ export function Home() {
       <Header>
         <HiddenItem />
         <LogoImg />
-        <Avatar />
+        <Avatar uri="https://github.com/marrcelosantana.png" />
       </Header>
 
       <Highlight colors={["#0a84ff", "#0ac4ff"]}>
