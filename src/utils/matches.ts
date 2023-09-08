@@ -23,7 +23,7 @@ export const matches: MatchDTO[] = [
     date: "23/09/2021",
     duration: "22:00",
     image:
-      "https://www.gremiofronteira.com.br/miniatura.php?src=uploads/estrutura_17/1626091324_whatsapp_image_2021-03-18_at_17.43.38__1_.jpeg",
+      "https://cdn.conmebol.com/wp-content/uploads/2022/06/Cancha-5-scaled.jpg",
   },
   {
     id: "4",
@@ -39,6 +39,6 @@ export const matches: MatchDTO[] = [
     date: "28/09/2021",
     duration: "21:00",
     image:
-      "https://www.gremiofronteira.com.br/miniatura.php?src=uploads/estrutura_17/1626091324_whatsapp_image_2021-03-18_at_17.43.38__1_.jpeg",
+      "https://cdn.conmebol.com/wp-content/uploads/2022/06/Cancha-5-scaled.jpg",
   },
 ];

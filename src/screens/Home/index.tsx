@@ -41,7 +41,7 @@ export function Home() {
 
       <Highlight colors={["#0a84ff", "#0ac4ff"]}>
         <HighlightText>
-          Gerencie seus{"\n"}rachas com{"\n"}facilidade e jogue{"\n"}com paixão!
+          Gerencie seus{"\n"}jogos com{"\n"}facilidade e jogue{"\n"}com paixão!
         </HighlightText>
         <HighlightImage source={PlayerImg} />
       </Highlight>
