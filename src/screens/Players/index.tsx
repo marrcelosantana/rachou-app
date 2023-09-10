@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { FlatList, Pressable } from "react-native";
 
 import { ArrowLeft } from "phosphor-react-native";
@@ -8,9 +8,8 @@ import { PlayerInfo } from "@components/PlayerInfo";
 
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { AppNavigatorRoutesProps } from "@routes/app.routes";
-import { PlayerDTO } from "@models/PlayerDTO";
 
-import { api } from "@services/api";
+import { useMatch } from "@hooks/useMatch";
 
 import {
   Container,
@@ -25,18 +24,8 @@ import {
 } from "./styles";
 
 export function Players() {
-  const [players, setPlayers] = useState<PlayerDTO[]>([]);
-
+  const { players, fetchPlayers } = useMatch();
   const navigator = useNavigation<AppNavigatorRoutesProps>();
-
-  async function fetchPlayers() {
-    try {
-      const response = await api.get("/players");
-      setPlayers(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   useFocusEffect(
     useCallback(() => {
@@ -59,7 +48,7 @@ export function Players() {
       <Content>
         <Info>
           <Title>Jogador</Title>
-          <Subtitle>Pontuação</Subtitle>
+          <Subtitle>Estrelas</Subtitle>
         </Info>
 
         <PlayersContainer>

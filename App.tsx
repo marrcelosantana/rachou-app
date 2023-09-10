@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "@themes/default-theme";
 import { Loading } from "@components/Loading";
 import { Routes } from "@routes/index";
+import { MatchContextProvider } from "@contexts/matchContext";
 
 import {
   useFonts,
@@ -24,14 +25,16 @@ export default function App() {
 
   return (
     <NativeBaseProvider>
-      <ThemeProvider theme={defaultTheme}>
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor="transparent"
-          translucent
-        />
-        {fontsLoaded ? <Routes /> : <Loading />}
-      </ThemeProvider>
+      <MatchContextProvider>
+        <ThemeProvider theme={defaultTheme}>
+          <StatusBar
+            barStyle="light-content"
+            backgroundColor="transparent"
+            translucent
+          />
+          {fontsLoaded ? <Routes /> : <Loading />}
+        </ThemeProvider>
+      </MatchContextProvider>
     </NativeBaseProvider>
   );
 }

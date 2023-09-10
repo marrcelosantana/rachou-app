@@ -22,7 +22,7 @@ export function MatchCard({ match }: Props) {
           </Info>
           <Info>
             <Clock size={12} color="#8E8E93" />
-            <Text>{match.duration}</Text>
+            <Text>{match.time}</Text>
           </Info>
         </Filter>
       </Background>

@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import { FlatList } from "react-native";
 import { ArrowUpRight } from "phosphor-react-native";
 
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { AppNavigatorRoutesProps } from "@routes/app.routes";
 
 import LogoImg from "@assets/white-logo.svg";
@@ -12,10 +12,7 @@ import { MatchCard } from "@components/MatchCard";
 import { PlayerCard } from "@components/PlayerCard";
 import { Avatar } from "@components/Avatar";
 
-import { MatchDTO } from "@models/MatchDTO";
-import { PlayerDTO } from "@models/PlayerDTO";
-
-import { api } from "@services/api";
+import { useMatch } from "@hooks/useMatch";
 
 import {
   CardsContainer,
@@ -32,30 +29,10 @@ import {
 } from "./styles";
 
 export function Home() {
-  const [matches, setMatchs] = useState<MatchDTO[]>([]);
-  const [players, setPlayers] = useState<PlayerDTO[]>([]);
-
+  const { matches, players, fetchMatches, fetchPlayers } = useMatch();
   const navigator = useNavigation<AppNavigatorRoutesProps>();
 
-  async function fetchMatches() {
-    try {
-      const response = await api.get("/matches");
-      setMatchs(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function fetchPlayers() {
-    try {
-      const response = await api.get("/players");
-      setPlayers(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(
+  useFocusEffect(
     useCallback(() => {
       fetchMatches();
       fetchPlayers();
