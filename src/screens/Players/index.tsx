@@ -1,3 +1,4 @@
+import { useCallback, useState } from "react";
 import { FlatList, Pressable } from "react-native";
 
 import { ArrowLeft } from "phosphor-react-native";
@@ -5,9 +6,11 @@ import { ArrowLeft } from "phosphor-react-native";
 import { Avatar } from "@components/Avatar";
 import { PlayerInfo } from "@components/PlayerInfo";
 
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { AppNavigatorRoutesProps } from "@routes/app.routes";
-import { players } from "@utils/players";
+import { PlayerDTO } from "@models/PlayerDTO";
+
+import { api } from "@services/api";
 
 import {
   Container,
@@ -22,7 +25,24 @@ import {
 } from "./styles";
 
 export function Players() {
+  const [players, setPlayers] = useState<PlayerDTO[]>([]);
+
   const navigator = useNavigation<AppNavigatorRoutesProps>();
+
+  async function fetchPlayers() {
+    try {
+      const response = await api.get("/players");
+      setPlayers(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useFocusEffect(
+    useCallback(() => {
+      fetchPlayers();
+    }, [])
+  );
 
   return (
     <Container>

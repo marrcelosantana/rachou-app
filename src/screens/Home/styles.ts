@@ -20,7 +20,7 @@ export const HiddenItem = styled.View``;
 export const Highlight = styled(LinearGradient)`
   max-width: 100%;
   height: 190px;
-  margin-top: 32px;
+  margin-top: 24px;
   border-radius: 15px;
   padding: 0 20px;
   flex-direction: row;

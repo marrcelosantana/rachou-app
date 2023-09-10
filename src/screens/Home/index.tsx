@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useState } from "react";
 import { FlatList } from "react-native";
 import { ArrowUpRight } from "phosphor-react-native";
 
@@ -11,8 +12,10 @@ import { MatchCard } from "@components/MatchCard";
 import { PlayerCard } from "@components/PlayerCard";
 import { Avatar } from "@components/Avatar";
 
-import { matches } from "@utils/matches";
-import { players } from "@utils/players";
+import { MatchDTO } from "@models/MatchDTO";
+import { PlayerDTO } from "@models/PlayerDTO";
+
+import { api } from "@services/api";
 
 import {
   CardsContainer,
@@ -29,7 +32,35 @@ import {
 } from "./styles";
 
 export function Home() {
+  const [matches, setMatchs] = useState<MatchDTO[]>([]);
+  const [players, setPlayers] = useState<PlayerDTO[]>([]);
+
   const navigator = useNavigation<AppNavigatorRoutesProps>();
+
+  async function fetchMatches() {
+    try {
+      const response = await api.get("/matches");
+      setMatchs(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function fetchPlayers() {
+    try {
+      const response = await api.get("/players");
+      setPlayers(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(
+    useCallback(() => {
+      fetchMatches();
+      fetchPlayers();
+    }, [])
+  );
 
   return (
     <Container>
@@ -41,7 +72,7 @@ export function Home() {
 
       <Highlight colors={["#0a84ff", "#0ac4ff"]}>
         <HighlightText>
-          Gerencie seus{"\n"}jogos com{"\n"}facilidade e jogue{"\n"}com paixão!
+          Gerencie seus{"\n"}rachas com{"\n"}facilidade e jogue{"\n"}com paixão!
         </HighlightText>
         <HighlightImage source={PlayerImg} />
       </Highlight>
